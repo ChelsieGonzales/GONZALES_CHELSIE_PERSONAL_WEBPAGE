@@ -1,0 +1,688 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@900&family=IM+Fell+English+SC&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Uncial+Antiqua&display=swap');
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 120px; /* Adjust this to your navbar height */
+}
+
+/* =============== INTRO SCREEN =============== */
+.intro-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  color: #f8f5e1;
+  font-family: 'IM Fell English SC', serif;
+  z-index: 10;
+}
+
+.intro-screen::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: -1;
+}
+
+.intro-content {
+  max-width: 700px;
+  padding: 30px;
+}
+
+.intro-screen h1 {
+  font-family: 'IM Fell English SC', serif;
+  font-size: 3rem;
+  color: #f9d57a;
+  text-shadow: 0 0 20px rgba(255, 215, 0, 0.8);
+}
+
+.intro-screen p {
+  margin: 20px 0;
+  font-size: 1.2rem;
+  color: #f4f4f4;
+}
+
+.unlock-btn {
+  background: #f9d57a;
+  color: #000;
+  font-family: 'Cinzel Decorative', serif;
+  font-size: 1rem;
+  padding: 12px 30px;
+  border-radius: 25px;
+  border: none;
+  box-shadow: 0 0 20px rgba(249, 213, 122, 0.8);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  animation: glow-button 2s infinite alternate;
+}
+
+.unlock-btn:hover {
+  background: #fbe59a;
+  transform: scale(1.05);
+}
+
+@keyframes glow-button {
+  from {
+    box-shadow: 0 0 10px rgba(249, 213, 122, 0.5), 0 0 20px rgba(249, 213, 122, 0.6);
+  }
+  to {
+    box-shadow: 0 0 25px rgba(249, 213, 122, 1), 0 0 45px rgba(255, 255, 200, 0.8);
+  }
+}
+
+/* =============== GLOBAL STYLES =============== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+img {
+  width: 100%;
+}
+
+/* =============== HEADER =============== */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(8px);
+  z-index: 1000;
+  padding: 10px 0;
+}
+
+header .navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 25px;
+}
+
+.navbar .logo .text {
+  margin-top: 30px;
+  font-family: 'IM Fell English SC', serif;
+  color: whitesmoke;
+  font-size: 40px;
+  margin-right: 40px;
+  font-weight: lighter;
+}
+
+.navbar .menu {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.navbar .menu .link {
+  color: #5bc0be;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 5px 20px;
+  border-radius: 40px;
+  background: rgba(91, 192, 222, 0.1);
+  border: 1px solid rgba(91, 192, 222, 0.5);
+  box-shadow: 0 0 12px rgba(91, 192, 222, 0.3);
+  backdrop-filter: blur(6px);
+  display: inline-block;
+  transition: all 0.3s ease;
+}
+
+.navbar .menu .link:hover {
+  color: #6ee7b7;
+  text-shadow: 0 0 10px #6ee7b7;
+  background: rgba(91, 192, 222, 0.3);
+  box-shadow: 0 0 20px rgba(91, 192, 222, 0.6);
+  transform: translateY(-2px) scale(1.05);
+  border-color: rgba(91, 192, 222, 0.8);
+}
+
+.menu .link.active {
+  color: #6ee7b7;
+  text-shadow: 0 0 15px #6ee7b7, 0 0 25px #6ee7b7;
+  background: rgba(110, 231, 183, 0.1);
+  border: 1px solid rgba(110, 231, 183, 0.4);
+}
+
+/* =============== WIZARDING PROFILE =============== */
+.section {
+  background: radial-gradient(circle, #2c2c54, #1a1a2e);
+}
+
+
+.section .section-content {
+  display: flex;
+  align-items: center;
+  min-height: 120vh;
+  color: whitesmoke;
+  justify-content: space-between;
+}
+
+.section .details .title {
+  align-items: center;
+  margin-left: 30px;
+  font-size: 40px;
+  color: whitesmoke;
+  text-shadow: 0 0 20px rgba(91, 192, 222, 0.6);
+  font-family: 'IM Fell English SC', serif;
+}
+
+.section .details .subtitle {
+  margin: 5px 0;
+  margin-left: 30px;
+  max-width: 100%;
+  font-size: 1.25rem;
+}
+
+.section .details .description {
+  margin: 5px 0;
+  margin-left: 30px;
+  max-width: 100%;
+  margin-top: 10px;
+  font-size: medium;
+}
+
+.section .image {
+  display: block;
+  max-width: 450px;
+  height: auto;
+  border-radius: 15px;
+  object-fit: contain;
+}
+
+.image figcaption {
+  font-family: 'Cinzel Decorative',serif;
+  font-size: 1.1rem;
+  color: #bce6ff;
+  text-shadow: 0 0 10px rgba(91, 192, 222, 0.7);
+  margin-top: 10px;
+  text-align: center;
+}
+
+/* =============== SECRET CHAMBER SECTION =============== */
+.secret-chamber {
+  padding: 120px 0;
+  background: linear-gradient(135deg, #0b132b, #1a1a2e, #3a506b, #5bc0be);
+  background-size: 300% 300%;
+  animation: glow-bg 10s ease infinite;
+}
+
+@keyframes glow-bg {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.secret-chamber .secret-chamber-details .section-title {
+  margin: 0 auto;  
+  text-align: center;
+  display: block;
+  font-size: 40px;
+  color: whitesmoke;
+  text-shadow: 0 0 20px rgba(91, 192, 222, 0.6);
+  font-family: 'IM Fell English SC', serif;
+}
+
+.secret-chamber .secret-chamber-content {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  justify-content: space-between;
+  color: whitesmoke;
+}
+
+.secret-chamber .wanted-img {
+  display: block;
+  margin-left: 30px;
+  width: 400px;
+  height: auto;
+  border-radius: 30px;
+  object-fit: cover;
+  box-shadow: 0 0 20px rgba(91, 192, 222, 0.6);
+  animation: wanted-glow 3s ease-in-out infinite alternate;
+}
+
+@keyframes wanted-glow {
+  from {
+    box-shadow: 0 0 15px rgba(91, 192, 222, 0.3), 0 0 30px rgba(91, 192, 222, 0.5);
+  }
+  to {
+    box-shadow: 0 0 40px rgba(91, 192, 222, 1), 0 0 70px rgba(91, 192, 222, 0.9);
+  }
+}
+
+.wanted-picture {
+  text-align: center;
+}
+
+.wanted-picture figcaption {
+  font-family: 'Cinzel Decorative',serif;
+  font-size: 1.1rem;
+  color: #bce6ff;
+  text-shadow: 0 0 10px rgba(91, 192, 222, 0.7);
+  margin-top: 10px;
+  text-align: center;
+}
+
+.secret-chamber .secret-chamber-details .text {
+  line-height: 30px;
+  margin-top: 30px;
+  margin-left: 25px;
+  margin-right: 25px;
+  text-align: justify;
+  font-size: medium;
+  color: whitesmoke;
+}
+
+/* =============== WIZARDING JOURNEY =============== */
+.journey .journey-title{
+  font-family: 'IM Fell English SC', serif;
+  font-size: 45px;
+  color: whitesmoke;
+  align-items: center;
+  text-shadow: 0 0 25px rgba(91, 192, 222, 0.8);
+  margin-bottom: 40px;
+}
+
+.journey {
+  background-color: #0b0b0d;
+  padding: 80px 20px;
+  color: #f5f5f5;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.journey::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at 20% 30%, rgba(91, 192, 222, 0.1), transparent 70%),
+              radial-gradient(circle at 80% 70%, rgba(200, 100, 255, 0.1), transparent 70%);
+  z-index: 0;
+}
+
+.journey-content {
+  position: relative;
+  z-index: 2;
+}
+
+.journey-pics {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.journey-pics figure {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(91, 192, 222, 0.2);
+  border-radius: 20px;
+  padding: 25px;
+  width: 260px;
+  box-shadow: 0 0 25px rgba(91, 192, 222, 0.15);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  backdrop-filter: blur(5px);
+}
+
+.journey-pics figure:hover {
+  transform: translateY(-12px) scale(1.03);
+  box-shadow: 0 0 40px rgba(91, 192, 222, 0.6);
+  border-color: rgba(91, 192, 222, 0.6);
+}
+
+.journey-pics img {
+  width: 100%;
+  border-radius: 15px;
+  border: 2px solid rgba(91, 192, 222, 0.4);
+  box-shadow: 0 0 15px rgba(91, 192, 222, 0.4);
+  transition: box-shadow 0.3s ease;
+}
+
+.journey-pics figure:hover img {
+  box-shadow: 0 0 30px rgba(91, 192, 222, 0.8);
+}
+
+.journey-pics figcaption {
+  font-family: 'Cinzel Decorative',serif;
+  font-size: 1.1rem;
+  color: #bce6ff;
+  text-shadow: 0 0 10px rgba(91, 192, 222, 0.7);
+  margin-top: 10px;
+}
+
+.journey-pics .name {
+  font-size: 1.3rem;
+  color: #d0f0ff;
+  margin: 10px 0 6px;
+  text-shadow: 0 0 15px rgba(200, 240, 255, 0.5);
+}
+
+.journey-pics .text {
+  font-size: 0.95rem;
+  color: #e0e0e0;
+  line-height: 1.5;
+  text-align: justify
+}
+
+@keyframes floatGlow {
+  0% { box-shadow: 0 0 20px rgba(91, 192, 222, 0.3); }
+  50% { box-shadow: 0 0 40px rgba(91, 192, 222, 0.6); }
+  100% { box-shadow: 0 0 20px rgba(91, 192, 222, 0.3); }
+}
+
+.journey-pics figure:hover {
+  animation: floatGlow 2s infinite ease-in-out;
+}
+
+@media (max-width: 768px) {
+  .journey-pics {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .journey-pics figure {
+    width: 85%;
+  }
+}
+
+/* =============== SPELLBOOK OF INTEREST =============== */
+.spellbook {
+  background: linear-gradient(135deg, #0b132b, #1a1a2e, #3a506b);
+  padding: 100px 20px;
+  color: whitesmoke;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+}
+
+.spellbook .section-title {
+  font-size: 42px;
+  color: whitesmoke;
+  font-family: 'IM Fell English SC', serif;
+  text-shadow: 0 0 25px rgba(91, 192, 222, 0.8);
+  margin-bottom: 50px;
+}
+
+.spellbook .certificates {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  margin-bottom: 60px;
+}
+
+.spellbook .spell-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(249, 213, 122, 0.4);
+  border-radius: 20px;
+  box-shadow: 0 0 25px rgba(249, 213, 122, 0.3);
+  padding: 20px;
+  width: 320px;
+  transition: all 0.4s ease;
+}
+
+.spellbook .spell-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 40px rgba(249, 213, 122, 0.7);
+}
+
+.spellbook .spell-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 15px;
+  object-fit: contain;
+}
+
+.spellbook .spell-card figcaption {
+  font-family: 'Cinzel Decorative',serif;
+  margin-top: 15px;
+  font-size: 1rem;
+  color: #fbe59a;
+  text-shadow: 0 0 10px rgba(249, 213, 122, 0.6);
+}
+
+.spellbook .interests {
+  max-width: 800px;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(91, 192, 222, 0.4);
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(91, 192, 222, 0.3);
+}
+
+.spellbook .interest-title {
+  font-size: 28px;
+  color: #5bc0be;
+  text-shadow: 0 0 15px rgba(91, 192, 222, 0.6);
+  margin-bottom: 15px;
+  font-family: 'Cinzel Decorative', serif;
+}
+
+.spellbook .interest-text {
+  font-size: 1.1rem;
+  font-family: 'Poppins', sans-serif;
+  color: #f8f5e1;
+  text-align: justify;
+  line-height: 1.8;
+}
+
+/* =============== POTIONS OF CREATIONS =============== */
+.potions {
+  background: radial-gradient(circle at top left, #1a1a2e, #0b132b, #3a506b);
+  padding: 100px 20px;
+  color: whitesmoke;
+  text-align: center;
+  font-family: 'IM Fell English SC', serif;
+}
+
+.potions .section-title {
+  font-family: 'IM Fell English SC';
+  font-size: 42px;
+  color: whitesmoke;
+  text-shadow: 0 0 25px rgba(91, 192, 222, 0.6);
+  margin-bottom: 60px;
+}
+
+.potions .potion-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+}
+
+.potions .potion-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(91, 192, 222, 0.4);
+  border-radius: 20px;
+  padding: 20px;
+  width: 320px;
+  transition: all 0.4s ease;
+  text-align: center;
+}
+
+.potions .potion-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 40px rgba(91, 192, 222, 0.4);
+}
+
+.potions .potion-card img {
+  width: 100%;
+  height: 200px;
+  border-radius: 15px;
+  object-fit: cover;
+  box-shadow: 0 0 15px rgba(91, 192, 222, 0.4);
+}
+
+.potions .potion-card figcaption {
+  font-family: 'Cinzel Decorative',serif;
+  margin-top: 15px;
+  font-size: 1.1rem;
+  color: #fbe59a;
+  text-shadow: 0 0 10px rgba(249, 213, 122, 0.6);
+  font-weight: bold;
+}
+
+.potions .potion-text {
+  margin-top: 10px;
+  font-size: 0.95rem;
+  color: #f8f5e1;
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.6;
+  text-align: justify;
+}
+
+.potions .github {
+  max-width: 800px;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(91, 192, 222, 0.4);
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(91, 192, 222, 0.3);
+}
+
+.potions .github-profile{
+  font-size: 28px;
+  color: #5bc0be;
+  text-shadow: 0 0 15px rgba(91, 192, 222, 0.6);
+  margin-bottom: 15px;
+  font-family: 'Cinzel Decorative', serif;
+}
+
+.potions .github-text {
+  font-size: 1.1rem;
+  font-family: 'Poppins', sans-serif;
+  color: #f8f5e1;
+  text-align: justify;
+  line-height: 1.8;
+  margin-bottom: 15px;
+}
+
+.github-link {
+  background-color: #5bc0de;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.github-link:hover {
+  background-color: #39a0c8;
+  box-shadow: 0 0 15px rgba(91, 192, 222, 0.7);
+}
+
+/* =============== SEND AN OWL =============== */
+.send-owl {
+  background: linear-gradient(to bottom right, #1c1c1c, #2f2f2f);
+  color: whitesmoke;
+  padding: 80px 20px;
+  text-align: center;
+  border-top: 2px solid #b28dff;
+}
+
+.send-owl-content {
+  max-width: 700px;
+  margin: auto;
+  background-color: rgba(30, 30, 30, 0.8);
+  border-radius: 20px;
+  padding: 40px;
+  box-shadow: 0 0 25px rgba(178, 141, 255, 0.5);
+}
+
+.send-owl .section-title {
+  font-family: 'IM Fell English SC', serif;
+  font-size: 40px;
+  color: #e6e6fa;
+  text-shadow: 0 0 15px rgba(200, 162, 255, 0.8);
+  margin-bottom: 20px;
+}
+
+.send-owl .text {
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  margin-bottom: 30px;
+  color: #dcdcdc;
+}
+
+.owl-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  text-align: left;
+}
+
+.owl-form label {
+  font-weight: bold;
+  font-size: 15px;
+  color: #cdb4ff;
+}
+
+.owl-form input,
+.owl-form textarea {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid #b28dff;
+  border-radius: 10px;
+  background-color: #222;
+  color: whitesmoke;
+  font-family: 'Poppins', sans-serif;
+  font-size: 15px;
+  transition: all 0.3s ease;
+}
+
+.owl-form input:focus,
+.owl-form textarea:focus {
+  outline: none;
+  box-shadow: 0 0 10px #b28dff;
+  border-color: #d1b3ff;
+}
+
+.send-owl-btn {
+  background-color: #b28dff;
+  color: #1a1a1a;
+  font-weight: bold;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 10px;
+  transition: all 0.3s ease;
+}
+
+.send-owl-btn:hover {
+  background-color: #d1b3ff;
+  box-shadow: 0 0 15px #b28dff;
+  transform: scale(1.05);
+}
