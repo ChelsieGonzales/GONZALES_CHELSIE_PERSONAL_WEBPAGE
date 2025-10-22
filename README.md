@@ -6,16 +6,15 @@ A magical personal website by **Chelsie Gonzales**, inspired by creativity, codi
 - Smooth scroll and animated elements
 - About Me section
 - Custom fonts and theme colors
-- Responsive layout (mobile-friendly)
+- Responsive layout
 
 ## 🧱 Built With
-- HTML5
+- HTML
 - CSS3
 - JavaScript
 
 ## 🌐 Live Demo
 [Visit the Website](https://yourusername.github.io/my-website/)  
-*(Replace with your actual GitHub Pages link)*
 
 ## 👩‍💻 Author
 **Chelsie Gonzales**  
